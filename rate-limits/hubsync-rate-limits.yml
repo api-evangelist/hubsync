@@ -1,0 +1,25 @@
+generated: '2026-08-22'
+method: searched
+source: https://hubsync.com/
+summary: >-
+  No rate limits are documented. HubSync publishes no developer documentation, no API reference
+  and no OpenAPI description, so there is no published limit, window, burst or exhaustion
+  behaviour to record, and no response headers could be observed because no public API endpoint
+  exists to call. Honest zero.
+limit_count: 0
+rate_limits: []
+headers: []
+status_code_on_exhaustion: null
+evidence:
+- url: https://docs.hubsync.com/sitemap.xml
+  status: 200
+  note: >-
+    The public Docsie documentation sitemap lists 116 end-user product guides (tax organizer,
+    e-file, workpapers, 8879 e-sign and similar). It contains no API reference, no rate-limit
+    page and no developer section.
+- url: https://hubsync.com/openapi.json
+  status: 404
+  note: No contract exists from which limits could be read.
+- url: https://app.hubsync.com/api-docs
+  status: 200
+  note: soft-404 Angular SPA shell (1,573 bytes), not documentation.

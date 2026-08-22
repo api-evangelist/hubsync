@@ -1,0 +1,73 @@
+generated: '2026-08-22'
+method: searched
+source: https://docs.hubsync.com/
+summary: >-
+  HubSync runs a Docsie-hosted documentation portal that internally carries "Release Notes",
+  "2025 Release Notes by Module" and "Release Notes and New Enhancements" shelves, but none of
+  them is publicly readable, so no changelog could be captured. No status page, no versioning
+  policy, no deprecation policy and no SLA are published. No StatusPage and no Deprecation
+  pointer is emitted, because emitting one would assert a surface HubSync does not serve.
+versioning:
+  scheme: null
+  policy_url: null
+  note: No public versioning policy. No API version appears anywhere on the public surface.
+deprecation:
+  policy: false
+  policy_url: null
+  sunset_header: unknown
+  deprecation_header: unknown
+  note: >-
+    RFC 8594 Sunset / Deprecation header behaviour could not be observed — there is no public
+    endpoint to observe it on.
+status_page:
+  present: false
+  url: null
+  evidence:
+  - url: https://status.hubsync.com/
+    status: 0
+    note: DNS does not resolve
+  - url: https://hubsync.statuspage.io/api/v2/status.json
+    status: 200
+    note: >-
+      NOT a HubSync status page. The hostname redirects to Atlassian's Statuspage marketing site
+      (atlassian.com/software/statuspage) and returns that page's HTML, not a status payload.
+      Recorded as a miss so it is not mistaken for a served status page.
+sla:
+  published: false
+  url: null
+changelog:
+  present: false
+  public: false
+  evidence:
+  - url: https://docs.hubsync.com/?doc=release-notes/release-notes
+    status: 200
+    note: >-
+      soft-404 Docsie SPA shell (13,551 bytes). The portal's own HTML metadata names Release
+      Notes shelves, but they are absent from the public sitemap and the Docsie content API
+      (api.docsie.io/api_v2/*/deployment/deployment_SEgpqVq42BLzmcNdl/) answers
+      {"error": "Invalid token."} (HTTP 403) without a customer token. Release notes exist; they
+      are not publicly readable.
+link_rot:
+  finding: >-
+    HubSync's own llms.txt — the file it publishes specifically for AI agents — advertises 24
+    hubsync.com URLs, of which SIX return HTTP 404. An agent following that file lands on a dead
+    page one time in four. The homepage navigation also links /solutions/ai-int, which 404s.
+  checked: '2026-08-22'
+  dead_links:
+  - url: https://hubsync.com/demo
+    status: 404
+  - url: https://hubsync.com/solutions/bill-and-pay
+    status: 404
+    live_equivalent: https://hubsync.com/solutions/bill-pay
+  - url: https://hubsync.com/solutions/tax-organizer-and-pbc
+    status: 404
+    live_equivalent: https://hubsync.com/solutions/tax-organizer-software
+  - url: https://hubsync.com/solutions/tax-workpapers
+    status: 404
+    live_equivalent: https://hubsync.com/solutions/tax-papers
+  - url: https://hubsync.com/solutions/tracking
+    status: 404
+    live_equivalent: https://hubsync.com/solutions/tax-return-tracking
+  - url: https://hubsync.com/solutions/ai-int
+    status: 404
+    source: linked from the hubsync.com homepage navigation, not from llms.txt

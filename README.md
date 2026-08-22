@@ -64,5 +64,16 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-HubSync is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+HubSync is an AI-powered, end-to-end tax and accounting workflow platform built for CPA firms,
+headquartered in Franklin, Tennessee. It unifies the engagement lifecycle in one interface:
+engagement letters, tax organizers and prepared-by-client data collection, document management,
+e-signature (including IRS Form 8879), batch federal and state extensions, tax return breakup and
+delivery, e-file tracking, web-based workpapers, analytics, and bill-and-pay. HubSync Halo adds an
+agentic AI orchestration layer.
+
+HubSync publishes an `llms.txt` and states that it operates a Model Context Protocol (MCP) server
+and bi-directional API integrations with CCH Axcess/ProSystem fx, Thomson Reuters
+GoSystem/UltraTax and SurePrep. It publishes **no public developer portal, API reference, OpenAPI
+description or endpoint documentation** — the integration surface is provisioned per customer firm.
+
+- https://hubsync.com/

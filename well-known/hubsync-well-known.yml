@@ -1,0 +1,128 @@
+generated: '2026-08-22'
+method: probed
+source: live HTTP probe of every HubSync host, 2026-08-22
+summary: >-
+  No /.well-known/ document is served on any HubSync host. hubsync.com (HubSpot CMS)
+  returns a real 404 for every path. docs.hubsync.com (Docsie portal) and app.hubsync.com
+  (Angular SPA) are catch-all hosts that answer HTTP 200 with a fixed-size HTML shell for
+  EVERY path, including nonsense ones — those 200s are soft-404s, not documents, and are
+  recorded as misses. No WellKnown and no SecurityTxt pointer is emitted.
+hit_count: 0
+hosts:
+- host: https://hubsync.com
+  note: HubSpot-hosted marketing site; returns a genuine 404 (172,871-byte error page) for unknown paths.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: https://docs.hubsync.com
+  note: >-
+    Docsie.io documentation portal. SOFT-404 CATCH-ALL — every path returns HTTP 200 with the
+    identical 13,551-byte SPA shell. Treated as a miss on every path.
+  soft_404_control:
+    path: /this-path-does-not-exist-api-evangelist-control
+    status: 200
+    bytes: 13551
+    content_type: text/html
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: soft-404 SPA shell (13,551 bytes) — not a document
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: soft-404 SPA shell (13,551 bytes) — not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: soft-404 SPA shell (13,551 bytes) — not a document
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: null
+    note: soft-404 SPA shell (13,551 bytes) — not a document
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: soft-404 SPA shell (13,551 bytes) — not a document
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    note: soft-404 SPA shell (13,551 bytes) — not a document
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    note: soft-404 SPA shell (13,551 bytes) — not a document
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    note: soft-404 SPA shell (13,551 bytes) — not a document
+- host: https://app.hubsync.com
+  note: >-
+    Angular application shell. SOFT-404 CATCH-ALL — every path returns HTTP 200 with the
+    identical 1,573-byte SPA shell. Treated as a miss on every path.
+  soft_404_control:
+    path: /this-path-does-not-exist-api-evangelist-control
+    status: 200
+    bytes: 1573
+    content_type: text/html
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: soft-404 SPA shell (1,573 bytes) — not a document
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: soft-404 SPA shell (1,573 bytes) — not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: soft-404 SPA shell (1,573 bytes) — not a document
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: null
+    note: soft-404 SPA shell (1,573 bytes) — not a document
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: soft-404 SPA shell (1,573 bytes) — not a document
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    note: soft-404 SPA shell (1,573 bytes) — not a document
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    note: soft-404 SPA shell (1,573 bytes) — not a document
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    note: soft-404 SPA shell (1,573 bytes) — not a document
+a2a:
+  result: no agent card
+  note: >-
+    Both /.well-known/agent-card.json and the legacy /.well-known/agent.json miss on every
+    host. Nothing is written to a2a/ — an agent card is search-only and is never authored on
+    a provider's behalf.

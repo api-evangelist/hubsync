@@ -1,0 +1,41 @@
+# HubSync
+> The All-in-One AI-Powered Tax and Accounting Automation Platform for CPA Firms.
+
+HubSync is a unified SaaS platform designed by CPA veterans to automate the end-to-end tax and accounting lifecycle. It unifies client engagement, document management, and workflow tracking into a single, AI-driven interface.
+
+## Platform Pillars
+
+### [Engage & Gather](https://hubsync.com/solutions/engage-and-gather)
+* [Engagement Letter Wizard](https://hubsync.com/solutions/engagement-letter-wizard): Bulk creation, routing, and tracking of engagement letters.
+* [Tax Organizer & PBC](https://hubsync.com/solutions/tax-organizer-and-pbc): Digital data collection with prior-year auto-fill.
+* [My Signature](https://hubsync.com/solutions/my-signature): Secure e-signature for standardized firm documents.
+* [Document Management](https://hubsync.com/solutions/document-management): Centralized storage with real-time co-editing and retention controls.
+* [Outlook Plug-In](https://hubsync.com/solutions/outlook-plug-in): Request files and signatures directly from the inbox.
+* [Gateway](https://hubsync.com/solutions/gateway): A unified command center for client and staff collaboration.
+
+### [Deliver & Last Mile Automation](https://hubsync.com/solutions/deliver-and-last-mile-automation)
+* [Batch Extension](https://hubsync.com/solutions/batch-extension): Automate thousands of IRS and state extensions.
+* [Tracking](https://hubsync.com/solutions/tracking): Real-time visibility into engagement and filing statuses.
+* [Tax Return Breakup & Delivery](https://hubsync.com/solutions/tax-return-breakup-and-delivery): Automated PDF splitting and return delivery.
+* [e-Sign](https://hubsync.com/solutions/e-sign): Compliance-ready e-signature for tax returns (8879s).
+* [e-File](https://hubsync.com/solutions/efile): Centralized tracking of all electronic filing statuses.
+
+### [Prepare & Review](https://hubsync.com/solutions/prepare-and-review)
+* [Tax Workpapers](https://hubsync.com/solutions/tax-workpapers): Web-based workpapers that automate preparation and review workflows.
+
+### [Analyze](https://hubsync.com/solutions/analyze)
+* [Analytics](https://hubsync.com/solutions/analytics): BI dashboards for firm health, productivity, and KPI tracking.
+
+### [Close](https://hubsync.com/solutions/close)
+* [Bill & Pay](https://hubsync.com/solutions/bill-and-pay): Integrated invoicing and digital payment collection.
+
+## AI, MCP & Integrations
+* [AI & Integrations](https://hubsync.com/solution/ai): HubSync uses an **Agentic AI** platform for document classification, summarization, and an in-app AI Assistant.
+* **MCP Connectivity:** Native support for **Model Context Protocol**, allowing users to interact with HubSync resources via Co-pilot, ChatGPT, and Claude.
+* **Ecosystem Sync:** Bi-directional API integrations with **CCH Axcess/ProSystem fx**, **Thomson Reuters (GoSystem/UltraTax)**, and **SurePrep**.
+
+## Key Resources
+* [Who We Are](https://hubsync.com/who-we-are)
+* [Insights & Blog](https://hubsync.com/blog)
+* [Case Studies](https://hubsync.com/case-studies)
+* [Request a Demo](https://hubsync.com/demo)

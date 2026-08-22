@@ -1,17 +1,35 @@
 aid: hubsync
 name: HubSync
-description: 'HubSync is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'HubSync is an AI-powered, end-to-end tax and accounting workflow platform
+  built for CPA firms, founded in 2019 by John McGowan and headquartered in Franklin, Tennessee.
+  The SaaS platform unifies the engagement lifecycle in one interface: engagement letter
+  generation and tracking, tax organizers and prepared-by-client data collection, document
+  management, e-signature (including IRS Form 8879), batch federal and state extensions,
+  tax return breakup and delivery, e-file status tracking, web-based tax workpapers,
+  firm analytics dashboards, and integrated bill-and-pay. Its HubSync Halo layer adds
+  agentic AI orchestration across those stages. HubSync publishes an llms.txt and states
+  that it ships a Model Context Protocol (MCP) server and bi-directional API integrations
+  with CCH Axcess/ProSystem fx, Thomson Reuters GoSystem/UltraTax and SurePrep, but it
+  publishes no public developer portal, API reference, OpenAPI description or endpoint
+  documentation — the entire integration surface is provisioned per customer firm.'
+image: https://hubsync.com/hubfs/HubSync_primary-logo-white-color.svg
 url: https://raw.githubusercontent.com/api-evangelist/hubsync/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-22'
 modified: '2026-08-22'
 tags:
 - Company
+- Tax
+- Accounting
+- Workflow Automation
+- Document Management
+- Electronic Signature
+- Professional Services
+- Artificial Intelligence
+- Model Context Protocol
+- SaaS
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +37,56 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/hubsync-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://hubsync.com/
+- type: Blog
+  url: https://hubsync.com/blog
+- type: Support
+  url: https://hubsync.com/contact-us
+- type: GitHubOrganization
+  url: https://github.com/hubsync
+- type: TermsOfService
+  url: https://hubsync.com/terms-of-use
+- type: PrivacyPolicy
+  url: https://hubsync.com/privacy-policy
+- type: LLMsTxt
+  url: llms/hubsync-llms.txt
+- type: MCPServer
+  url: mcp/hubsync-mcp.yml
+- type: Conformance
+  url: conformance/hubsync-conformance.yml
+- type: Compliance
+  url: conformance/hubsync-conformance.yml
+- type: Plans
+  url: plans/hubsync-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/hubsync-rate-limits.yml
+- type: Lifecycle
+  url: lifecycle/hubsync-lifecycle.yml
+x-enrichment:
+  date: '2026-08-22'
+  status: minimal
+  artifacts_added: 8
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: customer-only-docs
+  detail: >-
+    HubSync markets an MCP server and bi-directional REST integrations with CCH Axcess,
+    Thomson Reuters and SurePrep, but its only documentation host is a Docsie portal whose
+    content API answers {"error": "Invalid token."} without a customer token, its Integrations
+    and MCP shelves are absent from the public sitemap, and each CPA firm's tenant at
+    <firm>.hubsync.com refuses anonymous requests with HTTP 403 — so no contract, endpoint or
+    tool list is reachable without an active firm subscription.
+  evidence:
+  - url: https://api.docsie.io/api_v2/006/deployment/deployment_SEgpqVq42BLzmcNdl/
+    status: 403
+  - url: https://eisneramper.hubsync.com/
+    status: 403
+  - url: https://hubsync.com/openapi.json
+    status: 404
+  - url: https://docs.hubsync.com/?doc=release-notes/release-notes
+    status: 200
+  checked: '2026-08-22'

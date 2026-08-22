@@ -1,0 +1,26 @@
+generated: '2026-08-22'
+method: searched
+source: https://hubsync.com/
+summary: >-
+  HubSync publishes no pricing of any kind. There is no /pricing page, no plan names, no tiers,
+  no quotas and no published rate card. Every commercial path on the site is a "Book a Demo" or
+  "Contact Us" form routing to sales. This is an honest zero, not an unchecked field.
+plan_count: 0
+plans: []
+evidence:
+- url: https://hubsync.com/pricing
+  status: 404
+- url: https://hubsync.com/contact-us
+  status: 200
+  note: The sole commercial entry point — a contact/demo form. No prices shown.
+- url: https://hubsync.com/sitemap.xml
+  status: 200
+  note: >-
+    Full sitemap enumerated; it contains no pricing, plans, packages or editions page. Product
+    pages under /solutions/* describe capability only.
+sign_up:
+  self_serve: false
+  note: >-
+    No self-service sign-up exists. Accounts are provisioned per CPA firm as tenants on
+    <firm>.hubsync.com (anonymous requests to those hosts return HTTP 403). No SignUp or Login
+    pointer is emitted because HubSync publishes no public sign-up or login URL.

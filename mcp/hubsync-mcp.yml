@@ -1,0 +1,73 @@
+generated: '2026-08-22'
+method: searched
+status: vendor-announced
+source: https://hubsync.com/llms.txt
+sources:
+- url: https://hubsync.com/llms.txt
+  status: 301
+  note: redirects to https://hubsync.com/hubfs/llms.txt (HTTP 200)
+- url: https://hubsync.com/hubfs/llms.txt
+  status: 200
+  quote: >-
+    "MCP Connectivity: Native support for Model Context Protocol, allowing users to interact
+    with HubSync resources via Co-pilot, ChatGPT, and Claude."
+- url: https://hubsync.com/solution/ai
+  status: 200
+  quote: >-
+    "The HubSync MCP server lets outside AI assistants - like Microsoft Copilot, Claude, and
+    ChatGPT - safely connect to your engagement data, documents, and workflows." The same page
+    states data is protected by existing HubSync logins and permissions, all AI actions are
+    recorded, administrators control what assistants can access, and client data is never sent
+    to external AI model providers.
+api: HubSync platform (tax and accounting engagement workflow)
+summary: >-
+  HubSync publicly states, in its own llms.txt and on its AI product page, that it operates an
+  MCP server that third-party assistants (Microsoft Copilot, Claude, ChatGPT) connect to. The
+  server is real and first-party, but HubSync publishes NO endpoint URL, NO connection
+  instructions, NO tool list and NO input schemas anywhere on its public surface. Access appears
+  to be provisioned per customer firm inside the tenant (firm subdomains such as
+  <firm>.hubsync.com return HTTP 403 to anonymous requests). No tools/list call was possible.
+deployment:
+  mode: remote
+  endpoint: null
+  install: null
+  package: null
+  auth: oauth
+  verified: searched
+  endpoint_published: false
+  mode_basis: >-
+    Recorded as `remote` because HubSync describes external hosted assistants (Copilot, ChatGPT,
+    Claude) connecting to "the HubSync MCP server" over its own permission system — the shape of
+    a hosted remote server, not a locally installed stdio package. No npm/PyPI MCP package exists
+    under the HubSync name (checked: @hubsync/mcp 404, hubsync-mcp 404 on npm; hubsync-sdk 404 on
+    PyPI). NO endpoint URL is asserted here because HubSync publishes none and guessing one would
+    manufacture a verified agent surface that does not exist.
+  auth_basis: >-
+    HubSync states access is governed by "existing HubSync logins and permissions" with
+    administrator-scoped controls — an interactive identity handshake, recorded as oauth. Not
+    confirmed against a live authorization-server document; /.well-known/oauth-authorization-server
+    and /.well-known/oauth-protected-resource miss on every HubSync host (see
+    well-known/hubsync-well-known.yml).
+probes:
+- url: https://mcp.hubsync.com/
+  status: 0
+  note: DNS does not resolve
+- url: https://app.hubsync.com/mcp
+  status: 200
+  note: soft-404 Angular SPA shell (1,573 bytes), not an MCP endpoint
+- url: https://app.hubsync.com/sse
+  status: 200
+  note: soft-404 Angular SPA shell (1,573 bytes), not an MCP endpoint
+- url: https://eisneramper.hubsync.com/
+  status: 403
+  note: customer firm tenant; anonymous access refused
+tools: []
+tools_note: >-
+  Not recorded. The live tool list requires an authenticated MCP session against a customer
+  tenant, and HubSync publishes no tool catalog, so there is nothing to capture. No candidate
+  tool list is derived either: HubSync publishes no OpenAPI to derive one from, and inventing
+  tool names for a server that genuinely exists would be worse than recording none.
+gaps_for_provider:
+- Publish the MCP endpoint URL on a public page so an agent can discover it without a sales call.
+- Publish the tool list with input schemas (the MCP equivalent of an OpenAPI operation list).
+- Serve /.well-known/oauth-protected-resource so MCP clients can discover the authorization server.
