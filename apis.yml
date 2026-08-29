@@ -12,6 +12,17 @@ description: 'HubSync is an AI-powered, end-to-end tax and accounting workflow p
   with CCH Axcess/ProSystem fx, Thomson Reuters GoSystem/UltraTax and SurePrep, but it
   publishes no public developer portal, API reference, OpenAPI description or endpoint
   documentation — the entire integration surface is provisioned per customer firm.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://hubsync.com/hubfs/HubSync_primary-logo-white-color.svg
 url: https://raw.githubusercontent.com/api-evangelist/hubsync/refs/heads/main/apis.yml
 x-type: company
