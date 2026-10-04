@@ -47,8 +47,8 @@ tags:
 - Company
 - Tax
 - Accounting
-- Workflow-Automation
-- Document-Management
+- Workflow Automation
+- Document Management
 - Electronic Signature
 - Professional Services
 - Artificial Intelligence
@@ -65,6 +65,8 @@ tags_raw:
 - Artificial Intelligence
 - Model Context Protocol
 - SaaS
+- Workflow-Automation
+- Document-Management
 apis: []
 maintainers:
 - FN: Kin Lane
